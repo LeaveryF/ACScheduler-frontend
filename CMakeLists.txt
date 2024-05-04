@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ac_controller VERSION 0.1 LANGUAGES CXX)
+project(ACScheduler-frontend VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -24,31 +24,31 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(ac_controller
+    qt_add_executable(ACScheduler-frontend
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
 # Define target properties for Android with Qt 6 as:
-#    set_property(TARGET ac_controller APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#    set_property(TARGET ACScheduler-frontend APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
 # For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
 else()
     if(ANDROID)
-        add_library(ac_controller SHARED
+        add_library(ACScheduler-frontend SHARED
             ${PROJECT_SOURCES}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
-        add_executable(ac_controller
+        add_executable(ACScheduler-frontend
             ${PROJECT_SOURCES}
         )
     endif()
 endif()
 
-target_link_libraries(ac_controller PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(ACScheduler-frontend PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-set_target_properties(ac_controller PROPERTIES
+set_target_properties(ACScheduler-frontend PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -56,10 +56,10 @@ set_target_properties(ac_controller PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-install(TARGETS ac_controller
+install(TARGETS ACScheduler-frontend
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(ac_controller)
+    qt_finalize_executable(ACScheduler-frontend)
 endif()

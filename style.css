@@ -1,44 +1,44 @@
 #btn_up {
-    border-image: url(../ac_controller/pix/icon/black/arrowup.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/black/arrowup.png) 0 0 0 0;
     border: none;
 }
 #btn_up:hover {
-    border-image: url(../ac_controller/pix/icon/white/arrowup.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/white/arrowup.png) 0 0 0 0;
     border: none;
 }
 #btn_up:pressed {
-    border-image: url(../ac_controller/pix/icon/grey/arrowup.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/grey/arrowup.png) 0 0 0 0;
     border: none;
 }
 #btn_down {
-    border-image: url(../ac_controller/pix/icon/black/arrowdown.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/black/arrowdown.png) 0 0 0 0;
     border : none;
 }
 #btn_down:hover {
-    border-image: url(../ac_controller/pix/icon/white/arrowdown.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/white/arrowdown.png) 0 0 0 0;
     border: none;
 }
 #btn_down:pressed {
-    border-image: url(../ac_controller/pix/icon/grey/arrowdown.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/grey/arrowdown.png) 0 0 0 0;
     border: none;
 }
 #lab_tem{
-    border-image: url(../ac_controller/pix/icon/tem.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/tem.png) 0 0 0 0;
     border: none;
 }
 #hline,#vline{
     background-color: rgba(0,0,0,255);
 }
 #btn_power {
-    border-image: url(../ac_controller/pix/icon/black/power.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/black/power.png) 0 0 0 0;
     border : none;
 }
 #btn_power:hover {
-    border-image: url(../ac_controller/pix/icon/white/power.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/white/power.png) 0 0 0 0;
     border: none;
 }
 #btn_power:pressed {
-    border-image: url(../ac_controller/pix/icon/grey/power.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/grey/power.png) 0 0 0 0;
     border: none;
 }
 #btn_wind {
@@ -60,7 +60,7 @@
     color: white;
 }
 #lab_Wtag1,#lab_Wtag2,#lab_Wtag3{
-    border-image: url(../ac_controller/pix/icon/wind.png) 0 0 0 0;
+    border-image: url(../ACScheduler-frontend/pix/icon/wind.png) 0 0 0 0;
     border: none;
 }
 #frame{

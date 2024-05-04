@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     AppInit::Instance()->start();
 
-    QFile file("../ac_controller/style.css");
+    QFile file("../ACScheduler-frontend/style.css");
     file.open(QFile::ReadOnly);
     if(!file.isOpen()){
         qDebug() << "css没有打开";
