@@ -80,6 +80,7 @@ controller::controller(QWidget *parent) :
             ui->ledNumber->display(ui->ledNumber->value() - 1);
         }
     });
+
 }
 
 controller::~controller()
