@@ -2,8 +2,8 @@
 #define CONTROLLER_H
 
 #include <QLabel>
-#include <QWidget>
 #include <QTimer>
+#include <QWidget>
 
 namespace Ui {
 class controller;
@@ -16,8 +16,16 @@ class controller : public QWidget
 public:
     explicit controller(QWidget *parent = nullptr);
     ~controller();
+
+    void setCurrentTemp(qreal rounded_temp);
+signals:
+    void windSpeedChanged(QString target_speed, qint64 target_temp, QString target_mode);
+    void powerOn();
+    void powerOff();
+
 protected:
-    void paintEvent(QPaintEvent* evt) override;
+    void paintEvent(QPaintEvent *evt) override;
+
 private:
     Ui::controller *ui;
     QImage Texture;
@@ -25,6 +33,13 @@ private:
     int shownow;
     int numsign[2];
     int state;
+
+    // 用于处理一秒钟内连续点击事件。
+    QTimer *sendTimer;
+    bool pendingRequest = false;
+    QString pendingSpeedLevel;
+    int pendingTemperature;
+    QString pendingMode;
 };
 
 #endif // CONTROLLER_H

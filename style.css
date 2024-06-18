@@ -67,3 +67,7 @@
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(199, 197, 64, 255), stop:1 rgba(199, 197, 64, 128));
     border: 1px solid black;
 }
+#frame_2{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(100, 100, 14, 255), stop:1 rgba(149, 147, 14, 128));
+    border: 1px solid black;
+}
