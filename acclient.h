@@ -15,7 +15,9 @@ class ACClient : public QObject
     Q_OBJECT
 
 public:
-    explicit ACClient(const QUrl &url, bool debug = false,
+    explicit ACClient(const QUrl &url,
+                      bool debug = false,
+                      int temperature = 25,
                       QObject *parent = nullptr);
 
 private Q_SLOTS:
@@ -36,6 +38,7 @@ private:
     bool m_debug;
     controller _controller;
     Venv _venv;
+    int _env_temp;
 
     Speed getSpeed(QString speed);
 };

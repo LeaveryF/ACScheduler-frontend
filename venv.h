@@ -32,6 +32,8 @@ public:
     void setCurSpeed(Speed speed) { curr_speed_ = speed; }
     void setRunning(bool running) { is_running_ = running; }
     void setSetTemp(qreal set_temp) { set_temp_ = set_temp; }
+    void setCurTemp(int temperature) { curr_temp_ = temperature; }
+    void setEnvTemp(int temperature) { env_temp_ = temperature; }
 
     qreal getTargetTemp() { return set_temp_; }
     Speed getCurrSpeed() { return curr_speed_; }

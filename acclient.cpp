@@ -8,10 +8,11 @@
 QT_USE_NAMESPACE
 
 //! [constructor]
-ACClient::ACClient(const QUrl &url, bool debug, QObject *parent)
+ACClient::ACClient(const QUrl &url, bool debug, int temperature, QObject *parent)
     : QObject(parent)
     , m_debug(debug)
     , _venv(this)
+    , _env_temp(temperature)
 {
     if (m_debug)
         qDebug() << "WebSocket server:" << url;
@@ -30,8 +31,12 @@ ACClient::ACClient(const QUrl &url, bool debug, QObject *parent)
     connect(&_venv, &Venv::temperatureUpdated, this, &ACClient::updateTemperature);
     connect(&_venv, &Venv::echoCurrentTemp, this, &ACClient::echoTemp);
 
+    _controller.setEnvTemp(temperature);
+    _controller.setCurrentTemp(temperature);
     _controller.show();
     m_webSocket.open(url);
+    _venv.setEnvTemp(temperature);
+    _venv.setCurTemp(temperature);
 }
 //! [constructor]
 

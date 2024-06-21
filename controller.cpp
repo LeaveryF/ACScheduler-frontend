@@ -148,6 +148,11 @@ void controller::setCurrentCost(qreal rounded_cost)
     ui->lab_nowtemp_2->setText(tempCost);
 }
 
+void controller::setEnvTemp(int temperature)
+{
+    ui->ledNumber->display(temperature);
+}
+
 void controller::paintEvent(QPaintEvent *evt)
 {
     QPainter painter(this);

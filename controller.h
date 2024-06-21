@@ -19,6 +19,8 @@ public:
 
     void setCurrentTemp(qreal rounded_temp);
     void setCurrentCost(qreal rounded_cost);
+    void setEnvTemp(int temperature);
+
 signals:
     void windSpeedChanged(QString target_speed, qint64 target_temp, QString target_mode);
     void powerOn();

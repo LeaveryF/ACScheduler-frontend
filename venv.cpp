@@ -7,7 +7,7 @@ Venv::Venv(QObject *parent)
     , is_running_(false)
     , curr_temp_(25.0)
     , set_temp_(25.0)
-    , curr_speed_(Speed::High)
+    , curr_speed_(Speed::Medium)
     , timer_(this)
     , time_stamp_(0.0)
     , need_resent_(false)
@@ -85,7 +85,7 @@ void Venv::updateTemperature()
     }
 
     if (!is_running_ && !reach_target() && !power_off_) {
-        if (set_temp_ > curr_temp_ + 1 || set_temp_ + 1 < curr_temp_) {
+        if (set_temp_ >= curr_temp_ + 1 || set_temp_ + 1 <= curr_temp_) {
             // 重新发出送风请求。
             if (need_resent_) {
                 need_resent_ = false;

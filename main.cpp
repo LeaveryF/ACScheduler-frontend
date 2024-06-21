@@ -42,6 +42,14 @@ int main(int argc, char *argv[])
                                   "0");
     parser.addOption(roomOption);
 
+    // 新增环境温度参数选项
+    QCommandLineOption
+        tempOption(QStringList{u"t"_s, u"temperature"_s},
+                   QCoreApplication::translate("main", "Environment temperature [default: 25]."),
+                   "temperature",
+                   "25");
+    parser.addOption(tempOption);
+
     parser.process(a);
     bool debug = parser.isSet(dbgOption);
     bool ok = true;
@@ -53,6 +61,17 @@ int main(int argc, char *argv[])
     }
 
     QString room = parser.value(roomOption);
+
+    int temperature = parser.value(tempOption).toInt(&ok);
+    if (!ok) {
+        qWarning("Temperature must be a valid integer\n%s", qPrintable(parser.helpText()));
+        return 1;
+    }
+
+    if (temperature < 16 || temperature > 30) {
+        qWarning("Temperature must be a valid integer\n%s", qPrintable(parser.helpText()));
+        return 1;
+    }
 
     QUrl url;
     url.setScheme(u"ws"_s);
@@ -75,7 +94,7 @@ int main(int argc, char *argv[])
     // 初始化ACClient websocket对象。
     // debug信息：
     //url = "ws://localhost:8765/websocket/";
-    ACClient client(url, debug);
+    ACClient client(url, debug, temperature);
     //QObject::connect(&client, &ACClient::closed, &a, &QApplication::quit);
 
     //controller con;
