@@ -39,11 +39,12 @@ public:
     void setPowerOn() { power_off_ = false; }
 
     qreal getCurTemp() { return curr_temp_; }
-
+    void sendPacket();
 signals:
     void targetReached(qreal curr_temp);
     void requestRewind();
     void temperatureUpdated(qreal current_temp);
+    void echoCurrentTemp(qreal current_temp);
 };
 
 #endif // VENV_H

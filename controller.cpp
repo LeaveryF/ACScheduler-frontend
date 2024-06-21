@@ -142,6 +142,12 @@ void controller::setCurrentTemp(qreal rounded_temp)
     ui->lab_nowtemp->setText(tempText);
 }
 
+void controller::setCurrentCost(qreal rounded_cost)
+{
+    QString tempCost = QString::number(rounded_cost, 'f', 1) + " rmb";
+    ui->lab_nowtemp_2->setText(tempCost);
+}
+
 void controller::paintEvent(QPaintEvent *evt)
 {
     QPainter painter(this);

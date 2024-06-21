@@ -29,6 +29,7 @@ private Q_SLOTS:
     void setVenvPowerOff();
     void setVenvPowerOn();
     void deviation();
+    void echoTemp(qreal current_temp);
 
 private:
     QWebSocket m_webSocket;

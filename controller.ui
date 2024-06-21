@@ -154,8 +154,8 @@
      <widget class="QLabel" name="lab_text">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>160</y>
+        <x>110</x>
+        <y>140</y>
         <width>81</width>
         <height>31</height>
        </rect>
@@ -171,7 +171,7 @@
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>150</y>
+        <y>130</y>
         <width>51</width>
         <height>51</height>
        </rect>
@@ -258,6 +258,38 @@
       </property>
       <property name="text">
        <string>@</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_text_2">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>170</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>当前费用：</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_nowtemp_2">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>160</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0.0 rmb</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
