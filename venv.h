@@ -39,6 +39,7 @@ public:
     Speed getCurrSpeed() { return curr_speed_; }
     void setPowerOff() { power_off_ = true; }
     void setPowerOn() { power_off_ = false; }
+    void setNeedResent() { need_resent_ = true; }
 
     qreal getCurTemp() { return curr_temp_; }
     void sendPacket();

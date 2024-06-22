@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     QCommandLineOption roomOption(QStringList{u"r"_s, u"room"_s},
                                   QCoreApplication::translate("main", "Room number [default: 0]."),
                                   "room",
-                                  "0");
+                                  "1");
     parser.addOption(roomOption);
 
     // 新增环境温度参数选项
@@ -68,10 +68,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    if (temperature < 16 || temperature > 30) {
-        qWarning("Temperature must be a valid integer\n%s", qPrintable(parser.helpText()));
-        return 1;
-    }
+    // if (temperature < 16 || temperature > 30) {
+    //     qWarning("Temperature must be a valid integer\n%s", qPrintable(parser.helpText()));
+    //     return 1;
+    // }
 
     QUrl url;
     url.setScheme(u"ws"_s);

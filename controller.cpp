@@ -21,13 +21,17 @@ controller::controller(QWidget *parent)
     QPainter painter(&Texture);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.fillRect(rect(), QColor(200, 200, 200));
-    numsign[0] = 2;
+    numsign[0] = 1;
     state = 1;
     shownow = 1;
     timer.setInterval(400);
 
     sendTimer->setInterval(1000); // 1秒的间隔
     sendTimer->setSingleShot(true);
+
+    ui->lab_Wtag3->hide();
+    ui->lab_Wtag2->show();
+    ui->lab_Wtag1->show();
 
     connect(&timer, &QTimer::timeout, [this]() {
         shownow ^= 1;

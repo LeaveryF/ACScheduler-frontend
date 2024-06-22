@@ -115,6 +115,7 @@ void ACClient::powerOff()
     MessageBuilder::addItem("type", "SwitchPower");
     MessageBuilder::addItem("is_ac_power_on", qint64(0));
     setVenvPowerOff();
+    _venv.setRunning(false);
 
     m_webSocket.sendTextMessage(MessageBuilder::toString());
 }
@@ -133,6 +134,7 @@ void ACClient::deviation()
 
     // qDebug() << MessageBuilder::toString();
     // m_webSocket.sendTextMessage(MessageBuilder::toString());
+
     QString target_mode;
     Speed target_speed = _venv.getCurrSpeed();
     qreal target_temp = _venv.getTargetTemp();
@@ -263,6 +265,7 @@ void ACClient::updateTemperature(qreal current_temp)
 
 void ACClient::setVenvPowerOff()
 {
+    _venv.setNeedResent();
     _venv.setPowerOff();
 }
 
